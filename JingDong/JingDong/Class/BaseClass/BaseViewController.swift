@@ -26,7 +26,7 @@ class BaseViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        self.view.backgroundColor = UIColor.init(white: 0.5, alpha: 0.3);
+        self.view.backgroundColor = BaseTools.UIColorHex(0xedeeef);
         if (self.respondsToSelector(Selector("edgesForExtendedLayout")))
         {
             self.edgesForExtendedLayout = .None;

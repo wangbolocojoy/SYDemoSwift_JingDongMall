@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A75C557C1EC948F700E93BDD /* BaseTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C557B1EC948F700E93BDD /* BaseTools.swift */; };
+		A75C55BA1EC9815300E93BDD /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C55B91EC9815300E93BDD /* CommonDefine.swift */; };
+		A75C55F61EC98C4900E93BDD /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C55F51EC98C4900E93BDD /* TempViewController.swift */; };
 		A7D03BCE1EC5B512008EEC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */; };
 		A7D03BD51EC5B512008EEC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D03BD41EC5B512008EEC87 /* Assets.xcassets */; };
 		A7D03BD81EC5B512008EEC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D03BD61EC5B512008EEC87 /* LaunchScreen.storyboard */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A75C557B1EC948F700E93BDD /* BaseTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTools.swift; sourceTree = "<group>"; };
+		A75C55B91EC9815300E93BDD /* CommonDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDefine.swift; sourceTree = "<group>"; };
+		A75C55F51EC98C4900E93BDD /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		A7D03BCA1EC5B512008EEC87 /* JingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D03BD41EC5B512008EEC87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +90,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A75C55731EC9488400E93BDD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A75C55761EC9489C00E93BDD /* BaseTools */,
+				A75C55741EC9488400E93BDD /* CommonDefine */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A75C55741EC9488400E93BDD /* CommonDefine */ = {
+			isa = PBXGroup;
+			children = (
+				A75C55B91EC9815300E93BDD /* CommonDefine.swift */,
+				A75C55F51EC98C4900E93BDD /* TempViewController.swift */,
+			);
+			path = CommonDefine;
+			sourceTree = "<group>";
+		};
+		A75C55761EC9489C00E93BDD /* BaseTools */ = {
+			isa = PBXGroup;
+			children = (
+				A75C557B1EC948F700E93BDD /* BaseTools.swift */,
+			);
+			path = BaseTools;
+			sourceTree = "<group>";
+		};
 		A7D03BC11EC5B512008EEC87 = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */,
+				A75C55731EC9488400E93BDD /* Utils */,
 				A7D03BFE1EC5B6E4008EEC87 /* Supporting */,
 				A7D03BFD1EC5B6D0008EEC87 /* Resources */,
-				A7D03BFC1EC5B6C4008EEC87 /* Utils */,
 				A7D03BFB1EC5B681008EEC87 /* Class */,
 			);
 			path = JingDong;
@@ -146,13 +178,6 @@
 				A7D03C051EC5B78E008EEC87 /* UserCenter */,
 			);
 			path = Class;
-			sourceTree = "<group>";
-		};
-		A7D03BFC1EC5B6C4008EEC87 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		A7D03BFD1EC5B6D0008EEC87 /* Resources */ = {
@@ -361,9 +386,12 @@
 				A7D03C0D1EC5B90C008EEC87 /* CategoryVC.swift in Sources */,
 				A7D03C0F1EC5B92C008EEC87 /* DiscoverVC.swift in Sources */,
 				A7D03C091EC5B7E3008EEC87 /* BaseViewController.swift in Sources */,
+				A75C55BA1EC9815300E93BDD /* CommonDefine.swift in Sources */,
 				A7D03C131EC5B95C008EEC87 /* MineVC.swift in Sources */,
+				A75C55F61EC98C4900E93BDD /* TempViewController.swift in Sources */,
 				A7D03BCE1EC5B512008EEC87 /* AppDelegate.swift in Sources */,
 				A7D03C111EC5B943008EEC87 /* MainVC.swift in Sources */,
+				A75C557C1EC948F700E93BDD /* BaseTools.swift in Sources */,
 				A7D03C0B1EC5B8E6008EEC87 /* CartVC.swift in Sources */,
 				A7D03C071EC5B7C6008EEC87 /* BaseTabBarController.swift in Sources */,
 			);
