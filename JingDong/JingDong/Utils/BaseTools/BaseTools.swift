@@ -114,5 +114,84 @@ class BaseTools: NSObject {
         case format_yMdChangeSeparator = "yyyy.MM.dd"
     }
     
-    // MARK: -
+    // MARK: - 文件目录
+    
+    /// home沙盒主目录路径
+    class func FilePathHome() -> String
+    {
+        return NSHomeDirectory();
+    }
+    
+    /// temp临时目录
+    class func FilePathTemp() -> String
+    {
+        return NSTemporaryDirectory();
+    }
+    
+    /// document文档目录
+    class func FilePathDecument() -> String
+    {
+        let array = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true);
+        let path = array.first!;
+        return path;
+    }
+    
+    /// cache缓存目录
+    class func FilePathCache() -> String
+    {
+        let array = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true);
+        let path = array.first!;
+        return path;
+    }
+    
+    /// library目录
+    class func FilePathLibrary() -> String
+    {
+        let array = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true);
+        let path = array.first!;
+        return path;
+    }
+    
+    /// home主目录自定义文件路径
+    class func FilePathHomeWithName(name:String) -> String
+    {
+        var path = BaseTools.FilePathHome() as NSString
+        path = path.stringByAppendingPathComponent(name)
+        return path as String
+    }
+    
+    /// temp临时目录自定义文件路径
+    class func FilePathTempWithName(name:String) -> String
+    {
+        var path = BaseTools.FilePathTemp() as NSString
+        path = path.stringByAppendingPathComponent(name)
+        return path as String
+    }
+    
+    /// document文档目录自定义文件路径
+    class func FilePathDocumentWithName(name:String) -> String
+    {
+        var path = BaseTools.FilePathDecument() as NSString
+        path = path.stringByAppendingPathComponent(name)
+        return path as String
+    }
+    
+    /// cache缓存目录自定义文件路径
+    class func FilePathCacheWithName(name:String) -> String
+    {
+        var path = BaseTools.FilePathCache() as NSString
+        path = path.stringByAppendingPathComponent(name)
+        return path as String
+    }
+    
+    /// library目录自定义文件路径
+    class func FilePathLibraryWithName(name:String) -> String
+    {
+        var path = BaseTools.FilePathLibrary() as NSString
+        path = path.stringByAppendingPathComponent(name)
+        return path as String
+    }
+    
 }
+
+

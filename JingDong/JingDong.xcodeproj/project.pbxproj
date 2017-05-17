@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A75C557C1EC948F700E93BDD /* BaseTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C557B1EC948F700E93BDD /* BaseTools.swift */; };
 		A75C55BA1EC9815300E93BDD /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C55B91EC9815300E93BDD /* CommonDefine.swift */; };
-		A75C55F61EC98C4900E93BDD /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C55F51EC98C4900E93BDD /* TempViewController.swift */; };
+		A772CFB51ECC55190075CB4F /* MineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CFB41ECC55190075CB4F /* MineCollectionView.swift */; };
 		A7D03BCE1EC5B512008EEC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */; };
 		A7D03BD51EC5B512008EEC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D03BD41EC5B512008EEC87 /* Assets.xcassets */; };
 		A7D03BD81EC5B512008EEC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D03BD61EC5B512008EEC87 /* LaunchScreen.storyboard */; };
@@ -44,7 +44,7 @@
 /* Begin PBXFileReference section */
 		A75C557B1EC948F700E93BDD /* BaseTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTools.swift; sourceTree = "<group>"; };
 		A75C55B91EC9815300E93BDD /* CommonDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDefine.swift; sourceTree = "<group>"; };
-		A75C55F51EC98C4900E93BDD /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		A772CFB41ECC55190075CB4F /* MineCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCollectionView.swift; sourceTree = "<group>"; };
 		A7D03BCA1EC5B512008EEC87 /* JingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D03BD41EC5B512008EEC87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				A75C55B91EC9815300E93BDD /* CommonDefine.swift */,
-				A75C55F51EC98C4900E93BDD /* TempViewController.swift */,
 			);
 			path = CommonDefine;
 			sourceTree = "<group>";
@@ -114,6 +113,14 @@
 				A75C557B1EC948F700E93BDD /* BaseTools.swift */,
 			);
 			path = BaseTools;
+			sourceTree = "<group>";
+		};
+		A772CFB31ECC54EB0075CB4F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A772CFB41ECC55190075CB4F /* MineCollectionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A7D03BC11EC5B512008EEC87 = {
@@ -242,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D03C121EC5B95C008EEC87 /* MineVC.swift */,
+				A772CFB31ECC54EB0075CB4F /* Views */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -386,9 +394,9 @@
 				A7D03C0D1EC5B90C008EEC87 /* CategoryVC.swift in Sources */,
 				A7D03C0F1EC5B92C008EEC87 /* DiscoverVC.swift in Sources */,
 				A7D03C091EC5B7E3008EEC87 /* BaseViewController.swift in Sources */,
+				A772CFB51ECC55190075CB4F /* MineCollectionView.swift in Sources */,
 				A75C55BA1EC9815300E93BDD /* CommonDefine.swift in Sources */,
 				A7D03C131EC5B95C008EEC87 /* MineVC.swift in Sources */,
-				A75C55F61EC98C4900E93BDD /* TempViewController.swift in Sources */,
 				A7D03BCE1EC5B512008EEC87 /* AppDelegate.swift in Sources */,
 				A7D03C111EC5B943008EEC87 /* MainVC.swift in Sources */,
 				A75C557C1EC948F700E93BDD /* BaseTools.swift in Sources */,
