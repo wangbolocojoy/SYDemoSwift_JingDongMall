@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A74864821ECD3BC4006FE3F2 /* UIView+SYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74864811ECD3BC4006FE3F2 /* UIView+SYExtension.swift */; };
+		A74864841ECD4590006FE3F2 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = A74864831ECD4590006FE3F2 /* header.png */; };
+		A74864861ECD4779006FE3F2 /* UIColor+SYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74864851ECD4779006FE3F2 /* UIColor+SYExtension.swift */; };
+		A74864881ECD4795006FE3F2 /* UIImage+SYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74864871ECD4795006FE3F2 /* UIImage+SYExtension.swift */; };
 		A75C557C1EC948F700E93BDD /* BaseTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C557B1EC948F700E93BDD /* BaseTools.swift */; };
 		A75C55BA1EC9815300E93BDD /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C55B91EC9815300E93BDD /* CommonDefine.swift */; };
 		A772CFB51ECC55190075CB4F /* MineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CFB41ECC55190075CB4F /* MineCollectionView.swift */; };
+		A7760FFA1ECD3610000E4B70 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7760FF91ECD3610000E4B70 /* TestViewController.swift */; };
 		A7D03BCE1EC5B512008EEC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */; };
 		A7D03BD51EC5B512008EEC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D03BD41EC5B512008EEC87 /* Assets.xcassets */; };
 		A7D03BD81EC5B512008EEC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D03BD61EC5B512008EEC87 /* LaunchScreen.storyboard */; };
@@ -42,9 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A74864811ECD3BC4006FE3F2 /* UIView+SYExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SYExtension.swift"; sourceTree = "<group>"; };
+		A74864831ECD4590006FE3F2 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
+		A74864851ECD4779006FE3F2 /* UIColor+SYExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+SYExtension.swift"; sourceTree = "<group>"; };
+		A74864871ECD4795006FE3F2 /* UIImage+SYExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SYExtension.swift"; sourceTree = "<group>"; };
 		A75C557B1EC948F700E93BDD /* BaseTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTools.swift; sourceTree = "<group>"; };
 		A75C55B91EC9815300E93BDD /* CommonDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDefine.swift; sourceTree = "<group>"; };
 		A772CFB41ECC55190075CB4F /* MineCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCollectionView.swift; sourceTree = "<group>"; };
+		A7760FF91ECD3610000E4B70 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A7D03BCA1EC5B512008EEC87 /* JingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D03BD41EC5B512008EEC87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -90,9 +100,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A74864801ECD3B64006FE3F2 /* SYCategorySwift */ = {
+			isa = PBXGroup;
+			children = (
+				A74864811ECD3BC4006FE3F2 /* UIView+SYExtension.swift */,
+				A74864851ECD4779006FE3F2 /* UIColor+SYExtension.swift */,
+				A74864871ECD4795006FE3F2 /* UIImage+SYExtension.swift */,
+			);
+			path = SYCategorySwift;
+			sourceTree = "<group>";
+		};
 		A75C55731EC9488400E93BDD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A74864801ECD3B64006FE3F2 /* SYCategorySwift */,
 				A75C55761EC9489C00E93BDD /* BaseTools */,
 				A75C55741EC9488400E93BDD /* CommonDefine */,
 			);
@@ -103,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				A75C55B91EC9815300E93BDD /* CommonDefine.swift */,
+				A74864831ECD4590006FE3F2 /* header.png */,
+				A7760FF91ECD3610000E4B70 /* TestViewController.swift */,
 			);
 			path = CommonDefine;
 			sourceTree = "<group>";
@@ -365,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74864841ECD4590006FE3F2 /* header.png in Resources */,
 				A7D03BD81EC5B512008EEC87 /* LaunchScreen.storyboard in Resources */,
 				A7D03BD51EC5B512008EEC87 /* Assets.xcassets in Resources */,
 			);
@@ -391,16 +415,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74864881ECD4795006FE3F2 /* UIImage+SYExtension.swift in Sources */,
 				A7D03C0D1EC5B90C008EEC87 /* CategoryVC.swift in Sources */,
 				A7D03C0F1EC5B92C008EEC87 /* DiscoverVC.swift in Sources */,
 				A7D03C091EC5B7E3008EEC87 /* BaseViewController.swift in Sources */,
 				A772CFB51ECC55190075CB4F /* MineCollectionView.swift in Sources */,
 				A75C55BA1EC9815300E93BDD /* CommonDefine.swift in Sources */,
+				A74864861ECD4779006FE3F2 /* UIColor+SYExtension.swift in Sources */,
 				A7D03C131EC5B95C008EEC87 /* MineVC.swift in Sources */,
+				A74864821ECD3BC4006FE3F2 /* UIView+SYExtension.swift in Sources */,
 				A7D03BCE1EC5B512008EEC87 /* AppDelegate.swift in Sources */,
 				A7D03C111EC5B943008EEC87 /* MainVC.swift in Sources */,
 				A75C557C1EC948F700E93BDD /* BaseTools.swift in Sources */,
 				A7D03C0B1EC5B8E6008EEC87 /* CartVC.swift in Sources */,
+				A7760FFA1ECD3610000E4B70 /* TestViewController.swift in Sources */,
 				A7D03C071EC5B7C6008EEC87 /* BaseTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

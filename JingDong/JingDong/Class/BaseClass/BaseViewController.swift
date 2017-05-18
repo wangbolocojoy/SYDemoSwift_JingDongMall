@@ -24,15 +24,57 @@ class BaseViewController: UIViewController {
     }
     
 
+    // MARK: - 重写系统方法
+    
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+        print("\(self) 被释放了...")
+    }
+    
     override func loadView() {
         super.loadView()
-        self.view.backgroundColor = BaseTools.UIColorHex(0xedeeef);
+        self.view.backgroundColor = UIColor.colorHex(0xedeeef);
         if (self.respondsToSelector(Selector("edgesForExtendedLayout")))
         {
             self.edgesForExtendedLayout = .None;
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        self.hidesBottomBarWhenPushed = true
+        
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        if (self.isRootController())
+        {
+            self.hidesBottomBarWhenPushed = false;
+        }
+        else
+        {
+            self.hidesBottomBarWhenPushed = true;
+        }
+        
+        super.viewWillDisappear(animated)
+    }
+    
+    
+    // MARK: - 个性化设置
+    
+    // 是否是根视图控制器
+    func isRootController() -> Bool
+    {
+        let rootController = self.navigationController?.viewControllers.first
+        let isRoot = rootController?.isEqual(self)
+        return isRoot!
+    }
+    
+    // 导航栏样式
     func setNavigationStyle()
     {
         if self.navigationController!.navigationBar.respondsToSelector(Selector("barTintColor"))
@@ -40,7 +82,7 @@ class BaseViewController: UIViewController {
             // 背景色
             self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
             self.navigationController!.navigationBar.translucent = false
-            self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+            self.navigationController!.navigationBar.tintColor = UIColor.blackColor()
             
             // 字体
             self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont.systemFontOfSize(20.0), NSForegroundColorAttributeName:UIColor.blackColor()];
@@ -57,6 +99,29 @@ class BaseViewController: UIViewController {
             let maskRect = CGRectMake(0, -20.0, CGRectGetWidth(self.navigationController!.navigationBar.frame), (20.0 + CGRectGetHeight(self.navigationController!.navigationBar.frame)));
             maskLayer.path = CGPathCreateWithRect(maskRect, nil);
             self.navigationController!.navigationBar.layer.mask = maskLayer;
+        }
+    }
+    
+    // MARK: - 自定义方法
+    
+    
+    /// 返回上层视图响应
+    func backPreviousController()
+    {
+        if (self.isRootController())
+        {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else
+        {
+            if (self.presentedViewController != nil)
+            {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+            else
+            {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
         }
     }
 }

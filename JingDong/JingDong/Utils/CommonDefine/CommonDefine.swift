@@ -1,6 +1,6 @@
 //
 //  CommonDefine.swift
-//  JingDong
+//  zhangshaoyu
 //
 //  Created by zhangshaoyu on 17/5/15.
 //  Copyright © 2017年 zhangshaoyu. All rights reserved.
@@ -21,24 +21,22 @@ let GetAppCurrentVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFB
 let GetSystemVersion = UIDevice.currentDevice().systemVersion
 
 /// iPhone设备
-//let isIPHONE = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiomPhone ? true : false)
+let isIPhone = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone ? true : false)
 
 /// iPad设备
-//let isIPAD = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiomPad ? true : false)
+let isIPad = (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad ? true : false)
 
-///// iPhone5设备
-////#define iSiPhone5   ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640.0, 1136.0), [[UIScreen mainScreen] currentMode].size) : NO)
-///// iPhone4设备
-//#define isIPHONE4  (isIPHONE && (MAX(([[UIScreen mainScreen] bounds].size.width), ([[UIScreen mainScreen] bounds].size.height))) < 568.0)
-//
-///// iPhone5设备
-//#define isIPHONE5  (isIPHONE && (MAX(([[UIScreen mainScreen] bounds].size.width), ([[UIScreen mainScreen] bounds].size.height))) == 568.0)
-//
-///// iPhone6设备
-//#define isIPHONE6  (isIPHONE && (MAX(([[UIScreen mainScreen] bounds].size.width), ([[UIScreen mainScreen] bounds].size.height))) == 667.0)
-//
-///// iPhone6Plus设备
-//#define isIPHONE6P (isIPHONE && (MAX(([[UIScreen mainScreen] bounds].size.width), ([[UIScreen mainScreen] bounds].size.height))) == 736.0)
+/// iPhone4设备
+let isIPhone4 = (max(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.height) < 568.0 ? true : false)
+
+/// iPhone5设备
+let isIPhone5 = (max(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.height) == 568.0 ? true : false)
+
+/// iPhone6设备
+let isIPhone6 = (max(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.height) == 667.0 ? true : false)
+
+/// iPhone6Plus设备
+let isIPhone6P = (max(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.height) == 736.0 ? true : false)
 
 // MARK: - 尺寸信息
 

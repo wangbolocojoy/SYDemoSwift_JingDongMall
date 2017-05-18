@@ -16,6 +16,8 @@ class MainVC: BaseViewController {
         // Do any additional setup after loading the view.
         
         self.navigationItem.title = "首页";
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "test", style: .Done, target: self, action: Selector("test"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +26,10 @@ class MainVC: BaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func test()
+    {
+        let nextVC = TestViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    */
 
 }
