@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MineVC: BaseViewController {
+class MineVC: BaseViewController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +16,8 @@ class MineVC: BaseViewController {
         // Do any additional setup after loading the view.
         
         self.navigationItem.title = "我的";
+        
+        self.navigationController?.delegate = self;
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,5 +35,17 @@ class MineVC: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - UINavigationControllerDelegate
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        if viewController.isEqual(self)
+        {
+            self.navigationController?.navigationBarHidden = true;
+        }
+        else
+        {
+            self.navigationController?.navigationBarHidden = false;
+        }
+    }
 
 }
