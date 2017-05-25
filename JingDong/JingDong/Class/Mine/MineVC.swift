@@ -18,6 +18,8 @@ class MineVC: BaseViewController, UINavigationControllerDelegate {
         self.navigationItem.title = "我的";
         
         self.navigationController?.delegate = self;
+        
+        self.setUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +48,16 @@ class MineVC: BaseViewController, UINavigationControllerDelegate {
         {
             self.navigationController?.navigationBarHidden = false;
         }
+    }
+    
+    // MARK: - 视图
+    
+    func setUI()
+    {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = UICollectionViewScrollDirection.Vertical
+        let collectionView = MineCollectionView.init(frame: self.view.bounds, collectionViewLayout: layout)
+        self.view.addSubview(collectionView)
     }
 
 }

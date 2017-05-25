@@ -14,6 +14,7 @@
 		A75C557C1EC948F700E93BDD /* BaseTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C557B1EC948F700E93BDD /* BaseTools.swift */; };
 		A75C55BA1EC9815300E93BDD /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C55B91EC9815300E93BDD /* CommonDefine.swift */; };
 		A772CFB51ECC55190075CB4F /* MineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772CFB41ECC55190075CB4F /* MineCollectionView.swift */; };
+		A7738C841ED6D823002ADE10 /* GoodsListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7738C831ED6D823002ADE10 /* GoodsListCollectionCell.swift */; };
 		A7760FFA1ECD3610000E4B70 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7760FF91ECD3610000E4B70 /* TestViewController.swift */; };
 		A7D03BCE1EC5B512008EEC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */; };
 		A7D03BD51EC5B512008EEC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D03BD41EC5B512008EEC87 /* Assets.xcassets */; };
@@ -27,6 +28,8 @@
 		A7D03C0F1EC5B92C008EEC87 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D03C0E1EC5B92C008EEC87 /* DiscoverVC.swift */; };
 		A7D03C111EC5B943008EEC87 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D03C101EC5B943008EEC87 /* MainVC.swift */; };
 		A7D03C131EC5B95C008EEC87 /* MineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D03C121EC5B95C008EEC87 /* MineVC.swift */; };
+		A7D8EC7E1ED59E1B00B22953 /* MineCollectionHeaderADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EC7D1ED59E1B00B22953 /* MineCollectionHeaderADView.swift */; };
+		A7D8EC801ED59E4700B22953 /* MineCollectionHeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8EC7F1ED59E4700B22953 /* MineCollectionHeaderTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,7 @@
 		A75C557B1EC948F700E93BDD /* BaseTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTools.swift; sourceTree = "<group>"; };
 		A75C55B91EC9815300E93BDD /* CommonDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDefine.swift; sourceTree = "<group>"; };
 		A772CFB41ECC55190075CB4F /* MineCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCollectionView.swift; sourceTree = "<group>"; };
+		A7738C831ED6D823002ADE10 /* GoodsListCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsListCollectionCell.swift; sourceTree = "<group>"; };
 		A7760FF91ECD3610000E4B70 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A7D03BCA1EC5B512008EEC87 /* JingDong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JingDong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D03BCD1EC5B512008EEC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		A7D03C0E1EC5B92C008EEC87 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		A7D03C101EC5B943008EEC87 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		A7D03C121EC5B95C008EEC87 /* MineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineVC.swift; sourceTree = "<group>"; };
+		A7D8EC7D1ED59E1B00B22953 /* MineCollectionHeaderADView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCollectionHeaderADView.swift; sourceTree = "<group>"; };
+		A7D8EC7F1ED59E4700B22953 /* MineCollectionHeaderTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCollectionHeaderTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,56 @@
 			isa = PBXGroup;
 			children = (
 				A772CFB41ECC55190075CB4F /* MineCollectionView.swift */,
+				A7D8EC7D1ED59E1B00B22953 /* MineCollectionHeaderADView.swift */,
+				A7D8EC7F1ED59E4700B22953 /* MineCollectionHeaderTitleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A7738C7D1ED6D792002ADE10 /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				A7738C7E1ED6D7BE002ADE10 /* GoodsBrowser */,
+				A7738C7F1ED6D7BE002ADE10 /* GoodsOrder */,
+			);
+			path = Goods;
+			sourceTree = "<group>";
+		};
+		A7738C7E1ED6D7BE002ADE10 /* GoodsBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				A7738C801ED6D7DD002ADE10 /* GoodsDetail */,
+				A7738C811ED6D7DD002ADE10 /* GoodsList */,
+			);
+			path = GoodsBrowser;
+			sourceTree = "<group>";
+		};
+		A7738C7F1ED6D7BE002ADE10 /* GoodsOrder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GoodsOrder;
+			sourceTree = "<group>";
+		};
+		A7738C801ED6D7DD002ADE10 /* GoodsDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GoodsDetail;
+			sourceTree = "<group>";
+		};
+		A7738C811ED6D7DD002ADE10 /* GoodsList */ = {
+			isa = PBXGroup;
+			children = (
+				A7738C821ED6D7FB002ADE10 /* Views */,
+			);
+			path = GoodsList;
+			sourceTree = "<group>";
+		};
+		A7738C821ED6D7FB002ADE10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7738C831ED6D823002ADE10 /* GoodsListCollectionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +255,7 @@
 		A7D03BFB1EC5B681008EEC87 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A7738C7D1ED6D792002ADE10 /* Goods */,
 				A7D03BFF1EC5B78E008EEC87 /* BaseClass */,
 				A7D03C001EC5B78E008EEC87 /* Cart */,
 				A7D03C011EC5B78E008EEC87 /* Category */,
@@ -415,8 +472,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7738C841ED6D823002ADE10 /* GoodsListCollectionCell.swift in Sources */,
 				A74864881ECD4795006FE3F2 /* UIImage+SYExtension.swift in Sources */,
 				A7D03C0D1EC5B90C008EEC87 /* CategoryVC.swift in Sources */,
+				A7D8EC7E1ED59E1B00B22953 /* MineCollectionHeaderADView.swift in Sources */,
 				A7D03C0F1EC5B92C008EEC87 /* DiscoverVC.swift in Sources */,
 				A7D03C091EC5B7E3008EEC87 /* BaseViewController.swift in Sources */,
 				A772CFB51ECC55190075CB4F /* MineCollectionView.swift in Sources */,
@@ -426,6 +485,7 @@
 				A74864821ECD3BC4006FE3F2 /* UIView+SYExtension.swift in Sources */,
 				A7D03BCE1EC5B512008EEC87 /* AppDelegate.swift in Sources */,
 				A7D03C111EC5B943008EEC87 /* MainVC.swift in Sources */,
+				A7D8EC801ED59E4700B22953 /* MineCollectionHeaderTitleView.swift in Sources */,
 				A75C557C1EC948F700E93BDD /* BaseTools.swift in Sources */,
 				A7D03C0B1EC5B8E6008EEC87 /* CartVC.swift in Sources */,
 				A7760FFA1ECD3610000E4B70 /* TestViewController.swift in Sources */,

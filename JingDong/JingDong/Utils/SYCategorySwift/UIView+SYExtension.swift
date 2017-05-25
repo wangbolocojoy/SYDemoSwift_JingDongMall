@@ -78,6 +78,30 @@ extension UIView
         }
     }
     
+    // MARK: - 宽高
+    
+    var width:CGFloat {
+        get {
+            return self.frame.width
+        }
+        set(newValue) {
+            var rect = self.frame
+            rect.size.width = newValue
+            self.frame = rect
+        }
+    }
+    
+    var height:CGFloat {
+        get {
+            return self.frame.height
+        }
+        set(newValue) {
+            var rect = self.frame
+            rect.size.height = newValue
+            self.frame = rect
+        }
+    }
+    
     // MARK: - 位移
     
     // 移动到指定中心点位置
