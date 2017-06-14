@@ -35,7 +35,7 @@ class BaseViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        self.view.backgroundColor = UIColor.colorHex(0xedeeef);
+        self.view.backgroundColor = kBackgroundColor;
         if (self.respondsToSelector(Selector("edgesForExtendedLayout")))
         {
             self.edgesForExtendedLayout = .None;
@@ -94,11 +94,11 @@ class BaseViewController: UIViewController {
             */
             
             // 导航底部1px的阴影-遮住
-            let maskLayer = CAShapeLayer.init()
-            maskLayer.backgroundColor = UIColor.redColor().CGColor;
-            let maskRect = CGRectMake(0, -20.0, CGRectGetWidth(self.navigationController!.navigationBar.frame), (20.0 + CGRectGetHeight(self.navigationController!.navigationBar.frame)));
-            maskLayer.path = CGPathCreateWithRect(maskRect, nil);
-            self.navigationController!.navigationBar.layer.mask = maskLayer;
+//            let maskLayer = CAShapeLayer.init()
+//            maskLayer.backgroundColor = UIColor.blackColor().CGColor;
+//            let maskRect = CGRectMake(0, -20.0, CGRectGetWidth(self.navigationController!.navigationBar.frame), (20.0 + CGRectGetHeight(self.navigationController!.navigationBar.frame)));
+//            maskLayer.path = CGPathCreateWithRect(maskRect, nil);
+//            self.navigationController!.navigationBar.layer.mask = maskLayer;
         }
     }
     

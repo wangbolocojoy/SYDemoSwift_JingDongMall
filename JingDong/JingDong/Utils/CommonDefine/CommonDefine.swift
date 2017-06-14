@@ -81,6 +81,8 @@ enum TimeFormat:String
     case format_yMdChangeSeparator = "yyyy.MM.dd"
 }
 
+// MARK: - 颜色
+let kBackgroundColor = UIColor.colorHex(0xedeeef)
 
 
 

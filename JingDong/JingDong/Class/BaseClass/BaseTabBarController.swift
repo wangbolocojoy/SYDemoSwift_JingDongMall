@@ -49,7 +49,7 @@ class BaseTabBarController: UITabBarController {
         let mineNav = UINavigationController(rootViewController: self.mineVC)
    
         // tabbarController
-        self.tabBar.barTintColor = UIColor.blackColor()
+        self.tabBar.barTintColor = UIColor.whiteColor()
         // 注意：视图控制器超过5个时（不包含5）会自动生成一个more视图标签，用来控制第5、6、...以后的视图控制器。
         self.viewControllers = [mainNav, categoryNav, discoverNav, cartNav, mineNav]
         // 属性设置
@@ -70,7 +70,7 @@ class BaseTabBarController: UITabBarController {
         mainVC.tabBarItem = barItem01
         let barItem02 = UITabBarItem(title: "分类", image: UIImage(named: "tabImage_normal02"), selectedImage: UIImage(named: "tabImage_selected02"))
         categoryVC.tabBarItem = barItem02
-        let barItem03 = UITabBarItem(title: "觅", image: UIImage(named: "tabImage_normal03"), selectedImage: UIImage(named: "tabImage_selected03"))
+        let barItem03 = UITabBarItem(title: "觅Me", image: UIImage(named: "tabImage_normal03"), selectedImage: UIImage(named: "tabImage_selected03"))
         discoverVC.tabBarItem = barItem03
         let barItem04 = UITabBarItem(title: "购物车", image: UIImage(named: "tabImage_normal04"), selectedImage: UIImage(named: "tabImage_selected04"))
         cartVC.tabBarItem = barItem04
@@ -78,7 +78,7 @@ class BaseTabBarController: UITabBarController {
         mineVC.tabBarItem = barItem05
         
         // 设置字体颜色
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.blackColor()], forState: UIControlState.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.redColor()], forState: UIControlState.Selected)
         // 设置字体大小
         UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.systemFontOfSize(8.0)], forState: UIControlState.Normal)
