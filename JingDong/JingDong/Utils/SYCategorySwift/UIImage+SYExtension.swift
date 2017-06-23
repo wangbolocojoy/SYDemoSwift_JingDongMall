@@ -27,11 +27,30 @@ extension UIImage {
     
     class func imageWithURL(url:String) -> UIImage
     {
-        let url:NSURL = NSURL.fileURLWithPath(url)
-        let data:NSData = NSData(contentsOfURL: url)!
-        let image: UIImage = UIImage(data: data)!
+        let imageUrl:NSURL = NSURL.fileURLWithPath(url)
+        let imageData = NSData(contentsOfURL: imageUrl)
+        let image:UIImage = UIImage(data: imageData!)!
         return image
     }
+    
+//    class func imageCacheWithUrl((url:String) -> ())
+//    {
+//        var data:NSData? = NSUserDefaults.standardUserDefaults().objectForKey(url) as? NSData
+//        if data == nil
+//        {
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+//                () -> Void in
+//                let urlURL:NSURL = NSURL.fileURLWithPath(url)
+//                data = NSData(contentsOfURL: urlURL)!
+//                
+//                NSUserDefaults.standardUserDefaults().setObject(data, forKey: url)
+//                let image:UIImage = UIImage(data: data!)!
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    return image
+//                })
+//            })
+//        }
+//    }
     
     class func imageUIEdgeWithName(name name:String, edge:UIEdgeInsets) -> UIImage
     {

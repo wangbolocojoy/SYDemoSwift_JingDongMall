@@ -53,8 +53,13 @@ class DiscoverButtonView: UIView, UIScrollViewDelegate {
         self.button = UIButton(frame: CGRectMake(currentView.right, currentView.top, currentView.height, currentView.height))
         self.addSubview(self.button)
         self.button.setImage(UIImage.imageWithName("down_normal"), forState: .Normal)
-        self.button.setImage(UIImage.imageWithName("down_highlight"), forState: .Highlighted)
-        self.button.addTarget(self, action: Selector("showModalView"), forControlEvents: .TouchUpInside)
+        self.button.setImage(UIImage.imageWithName("up_normal"), forState: .Highlighted)
+        self.button.setImage(UIImage.imageWithName("up_normal"), forState: .Selected)
+        self.button.addTarget(self, action: Selector("showModalView:"), forControlEvents: .TouchUpInside)
+        
+        let lineButton = UIView(frame: CGRectMake(0.0, 0.0, 0.5, self.button.height))
+        self.button.addSubview(lineButton)
+        lineButton.backgroundColor = UIColor.lightGrayColor()
         
         // 分割线
         let lineView = UIView(frame: CGRectMake(0.0, (self.height - 0.5), self.width, 0.5))
@@ -63,15 +68,15 @@ class DiscoverButtonView: UIView, UIScrollViewDelegate {
     }
     
     // MARK: - 响应
-    func showModalView()
+    func showModalView(button:UIButton)
     {
-        
+        button.selected = !button.selected;
     }
     
     func reloadData()
     {
         var sizeWidth:CGFloat = originXY
-        
+
         for index in 0..<self.titles.count
         {
             let title = self.titles[index] as! String
@@ -111,20 +116,19 @@ class DiscoverButtonView: UIView, UIScrollViewDelegate {
         UIView.animateWithDuration(0.3) { () -> Void in
             self.titleLine.left = button.left
         }
-        if (button.right > (self.titleView.width + self.previousOffX))
+        
+        //
+        let buttonRight = button.frame.origin.x + button.frame.size.width + originXY;
+        let buttonLeft = button.frame.origin.x;
+        if (buttonRight > (self.titleView.width + self.previousOffX))
         {
-            self.titleView.setContentOffset(CGPointMake(((button.right + originXY) - self.titleView.width), 0.0), animated: true)
-            self.previousOffX = ((button.right + originXY) - self.titleView.width)
+            self.previousOffX = (buttonRight - self.titleView.width);
+            self.titleView.setContentOffset(CGPointMake(self.previousOffX, 0.0), animated: true)
         }
-        else if (button.left < self.previousOffX)
+        else if (buttonLeft < self.previousOffX)
         {
-            var pointX:CGFloat = (self.previousOffX - button.left - originXY)
-            if (button.right + originXY < self.titleView.width)
-            {
-                pointX = 0.0
-            }
-            self.titleView.setContentOffset(CGPointMake(pointX, 0.0), animated: true)
-            self.previousOffX = pointX
+            self.previousOffX = (buttonRight - button.width - originXY * 2);
+            self.titleView.setContentOffset(CGPointMake(self.previousOffX, 0.0), animated: true)
         }
         
         //
@@ -141,10 +145,9 @@ class DiscoverButtonView: UIView, UIScrollViewDelegate {
     
     // MARK: - UIScrollViewDelegate
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(scrollView: UIScrollView)
+    {
         self.previousOffX = scrollView.contentOffset.x
-        
-        print(self.previousOffX)
     }
 
 }

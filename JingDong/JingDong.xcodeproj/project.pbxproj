@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7218BED1EFCF37D00FB9D13 /* DiscoverLargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7218BEC1EFCF37D00FB9D13 /* DiscoverLargeCell.swift */; };
+		A7218BEF1EFCF38E00FB9D13 /* DiscoverLitterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7218BEE1EFCF38E00FB9D13 /* DiscoverLitterCell.swift */; };
+		A7218BF11EFCF39E00FB9D13 /* DiscoverMidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7218BF01EFCF39E00FB9D13 /* DiscoverMidCell.swift */; };
 		A736AC151EF3AE4E00C03DF6 /* NSString+SYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736AC141EF3AE4E00C03DF6 /* NSString+SYExtension.swift */; };
 		A74864821ECD3BC4006FE3F2 /* UIView+SYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74864811ECD3BC4006FE3F2 /* UIView+SYExtension.swift */; };
 		A74864841ECD4590006FE3F2 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = A74864831ECD4590006FE3F2 /* header.png */; };
@@ -62,6 +65,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7218BEC1EFCF37D00FB9D13 /* DiscoverLargeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverLargeCell.swift; sourceTree = "<group>"; };
+		A7218BEE1EFCF38E00FB9D13 /* DiscoverLitterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverLitterCell.swift; sourceTree = "<group>"; };
+		A7218BF01EFCF39E00FB9D13 /* DiscoverMidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverMidCell.swift; sourceTree = "<group>"; };
 		A736AC141EF3AE4E00C03DF6 /* NSString+SYExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+SYExtension.swift"; sourceTree = "<group>"; };
 		A74864811ECD3BC4006FE3F2 /* UIView+SYExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SYExtension.swift"; sourceTree = "<group>"; };
 		A74864831ECD4590006FE3F2 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
@@ -248,6 +254,9 @@
 			children = (
 				A7C5E6F21EF2860F00053FD6 /* DiscoverButtonView.swift */,
 				A7C5E6F41EF2864200053FD6 /* DiscoverCell.swift */,
+				A7218BEC1EFCF37D00FB9D13 /* DiscoverLargeCell.swift */,
+				A7218BF01EFCF39E00FB9D13 /* DiscoverMidCell.swift */,
+				A7218BEE1EFCF38E00FB9D13 /* DiscoverLitterCell.swift */,
 				A7C5E6F61EF2865400053FD6 /* DiscoverTable.swift */,
 			);
 			path = View;
@@ -543,8 +552,10 @@
 				A7738C841ED6D823002ADE10 /* GoodsListCollectionCell.swift in Sources */,
 				A74864881ECD4795006FE3F2 /* UIImage+SYExtension.swift in Sources */,
 				A7D03C0D1EC5B90C008EEC87 /* CategoryVC.swift in Sources */,
+				A7218BED1EFCF37D00FB9D13 /* DiscoverLargeCell.swift in Sources */,
 				A7D8EC7E1ED59E1B00B22953 /* MineCollectionHeaderADView.swift in Sources */,
 				A7C5E6F51EF2864200053FD6 /* DiscoverCell.swift in Sources */,
+				A7218BEF1EFCF38E00FB9D13 /* DiscoverLitterCell.swift in Sources */,
 				A7BB50321EF1096C007274A0 /* CategoryModel.swift in Sources */,
 				A7D03C0F1EC5B92C008EEC87 /* DiscoverVC.swift in Sources */,
 				A7D03C091EC5B7E3008EEC87 /* BaseViewController.swift in Sources */,
@@ -556,6 +567,7 @@
 				A74864821ECD3BC4006FE3F2 /* UIView+SYExtension.swift in Sources */,
 				A7BB503C1EF1227E007274A0 /* CategoryDetailTitleHeader.swift in Sources */,
 				A7C5E6F11EF2854E00053FD6 /* DiscoverModel.swift in Sources */,
+				A7218BF11EFCF39E00FB9D13 /* DiscoverMidCell.swift in Sources */,
 				A7D0BD6B1EEFEE720067D96F /* CategoryListView.swift in Sources */,
 				A736AC151EF3AE4E00C03DF6 /* NSString+SYExtension.swift in Sources */,
 				A7BB50341EF121E5007274A0 /* CategoryDetailView.swift in Sources */,
