@@ -52,7 +52,8 @@ class TestViewController: BaseViewController {
 
         imageView.effectViewWithAlpha(0.6)
         
-        imageView.layer(radius: 3.0, borderWidth: 1.0, borderColor: UIColor.redColor())
+        imageView.viewRadius(radius: 3.0)
+        imageView.viewBorder(lineWidth: 1.0, lineColor: UIColor.redColor())
         
         imageView.viewFlip(false)
         

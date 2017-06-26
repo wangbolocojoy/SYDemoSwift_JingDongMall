@@ -19,15 +19,25 @@ class DiscoverLargeCell: DiscoverCell {
         // Drawing code
     }
     */
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.height = DiscoverLargeCell.heightForCell()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - 视图
     override func setUI()
     {
-        self.height = DiscoverLargeCell.heightForCell()
-        
         self.productImageView = UIImageView(frame: CGRectMake(0.0, 0.0, self.width, 180.0))
         self.contentView.addSubview(self.productImageView!)
         self.productImageView!.backgroundColor = UIColor.clearColor()
+        self.productImageView!.clipsToBounds = true
+        self.productImageView!.contentMode = .ScaleAspectFill
         
         var currentView:UIView = self.productImageView!
         
@@ -42,6 +52,7 @@ class DiscoverLargeCell: DiscoverCell {
         
         self.authorImageView = UIImageView(frame: CGRectMake(currentView.left, currentView.bottom, sizeImage, sizeImage))
         self.contentView.addSubview(self.authorImageView!)
+        self.authorImageView!.viewRadius(radius: sizeImage / 2)
         
         currentView = self.authorImageView!
         
@@ -65,13 +76,13 @@ class DiscoverLargeCell: DiscoverCell {
         self.contentView.addSubview(self.productNumberLabel!)
         self.productNumberLabel!.font = UIFont.systemFontOfSize(10.0)
         self.productNumberLabel!.textColor = UIColor.lightGrayColor()
-        self.productNumberLabel!.textAlignment = .Left
+        self.productNumberLabel!.textAlignment = .Right
         
         currentView = self.productNumberLabel!
         
-        let lineView = UIView(frame: CGRectMake(0.0, (currentView.bottom + originXY - 0.5), self.width, 0.5))
+        let lineView = UIImageView(frame: CGRectMake(0.0, (currentView.bottom + originXY - 0.5), self.width, 0.5))
         self.contentView.addSubview(lineView)
-        lineView.backgroundColor = UIColor.lightGrayColor()
+        lineView.image = UIImage.imageWithColor(UIColor.lightGrayColor())
     }
     
     /// cell高度
@@ -85,16 +96,20 @@ class DiscoverLargeCell: DiscoverCell {
     {
         if let model:DiscoverModel = data
         {
-            let imageStr:String = model.productImages.first! as String
-            self.productImageView!.image = UIImage.imageWithURL(imageStr)
+            let imageStr:String = model.productImages[random() % model.productImages.count] 
+            UIImage.imageCacheWithUrl(imageUrl: imageStr, complete: {
+                (image:UIImage) -> Void in
+                self.productImageView!.image = image
+            })
             
             let title:String = model.productTitle
             self.productTitleLabel!.text = title
             
             let imageHeaderStr:String = model.productAuthorImage
-            let imageHeaderUrl:NSURL = NSURL(string: imageHeaderStr)!
-            let imageHeaderData:NSData = NSData(contentsOfURL: imageHeaderUrl)!
-            self.authorImageView!.image = UIImage(data: imageHeaderData)
+            UIImage.imageCacheWithUrl(imageUrl: imageHeaderStr, complete: {
+                (image:UIImage) -> Void in
+                self.authorImageView!.image = image
+            })
             
             let name:String = model.productAuthorName
             self.authorNameLabel!.text = name

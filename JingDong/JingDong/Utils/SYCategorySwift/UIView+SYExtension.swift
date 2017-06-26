@@ -137,8 +137,8 @@ extension UIView
     
     // MARK: - 边框属性
     
-    // 圆角边框设置
-    func layer(radius radius:CGFloat, borderWidth:CGFloat, borderColor:UIColor) -> Void
+    // 圆角设置
+    func viewRadius(radius radius:CGFloat) -> Void
     {
         if (0.0 < radius)
         {
@@ -146,11 +146,15 @@ extension UIView
             self.layer.masksToBounds = true
             self.clipsToBounds = true
         }
-        
+    }
+    
+    // 边框设置
+    func viewBorder(lineWidth borderWidth:CGFloat, lineColor:UIColor) -> Void
+    {
         if (0.0 < borderWidth)
         {
-            self.layer.borderColor = borderColor.CGColor
             self.layer.borderWidth = borderWidth
+            self.layer.borderColor = lineColor.CGColor
         }
     }
     

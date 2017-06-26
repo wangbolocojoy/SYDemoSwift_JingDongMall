@@ -26,11 +26,19 @@ class DiscoverLitterCell: DiscoverCell {
     var imageView02:UIImageView!
     var imageView03:UIImageView!
 
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.height = DiscoverLitterCell.heightForCell()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - 视图
     override func setUI()
     {
-        self.height = DiscoverLitterCell.heightForCell()
-        
         self.productTitleLabel = UILabel(frame: CGRectMake(originXY, originXY, (self.width - originXY * 2), heightTitle))
         self.contentView.addSubview(self.productTitleLabel!)
         self.productTitleLabel!.font = UIFont.systemFontOfSize(14.0)
@@ -40,31 +48,38 @@ class DiscoverLitterCell: DiscoverCell {
      
         var currentView:UIView  = self.productTitleLabel!
         
-        let backImageView = UIView(frame: CGRectMake(originXY, originXY, (self.width - originXY * 2), sizeImageView))
+        let backImageView = UIView(frame: CGRectMake(currentView.left, currentView.bottom, currentView.width, sizeImageView))
         self.contentView.addSubview(backImageView)
         backImageView.backgroundColor = UIColor.clearColor()
         //
         self.imageView01 = UIImageView(frame: CGRectMake(0.0, 0.0, sizeImageView, sizeImageView))
         backImageView.addSubview(self.imageView01)
         self.imageView01.backgroundColor = UIColor.clearColor()
+        self.imageView01.clipsToBounds = true
+        self.imageView01.contentMode = .ScaleAspectFill
         self.imageView01.tag = (tagImageView + 0)
         self.imageView02 = UIImageView(frame: CGRectMake((self.imageView01.right + originXY), 0.0, sizeImageView, sizeImageView))
         backImageView.addSubview(self.imageView02)
         self.imageView02.backgroundColor = UIColor.clearColor()
+        self.imageView02.clipsToBounds = true
+        self.imageView02.contentMode = .ScaleAspectFill
         self.imageView02.tag = (tagImageView + 1)
         self.imageView03 = UIImageView(frame: CGRectMake((self.imageView02.right + originXY), 0.0, sizeImageView, sizeImageView))
         backImageView.addSubview(self.imageView03)
         self.imageView03.backgroundColor = UIColor.clearColor()
+        self.imageView03.clipsToBounds = true
+        self.imageView03.contentMode = .ScaleAspectFill
         self.imageView03.tag = (tagImageView + 2)
         
         currentView = backImageView
         
-        self.authorImageView = UIImageView(frame: CGRectMake(currentView.left, currentView.bottom, sizeImage, sizeImage))
+        self.authorImageView = UIImageView(frame: CGRectMake(currentView.left, (currentView.bottom + originXY / 2), sizeImage, sizeImage))
         self.contentView.addSubview(self.authorImageView!)
+        self.authorImageView!.viewRadius(radius: sizeImage / 2)
         
         currentView = self.authorImageView!
         
-        self.authorNameLabel = UILabel(frame: CGRectMake((currentView.right + originXY), currentView.top, 100.0, currentView.height))
+        self.authorNameLabel = UILabel(frame: CGRectMake((currentView.right + originXY / 2), currentView.top, 100.0, currentView.height))
         self.contentView.addSubview(self.authorNameLabel!)
         self.authorNameLabel!.font = UIFont.systemFontOfSize(10.0)
         self.authorNameLabel!.textColor = UIColor.lightGrayColor()
@@ -72,7 +87,7 @@ class DiscoverLitterCell: DiscoverCell {
         
         currentView = self.authorNameLabel!
         
-        self.productReadLabel = UILabel(frame: CGRectMake((currentView.right + originXY), currentView.top, 100.0, currentView.height))
+        self.productReadLabel = UILabel(frame: CGRectMake((currentView.right + originXY / 2), currentView.top, 100.0, currentView.height))
         self.contentView.addSubview(self.productReadLabel!)
         self.productReadLabel!.font = UIFont.systemFontOfSize(10.0)
         self.productReadLabel!.textColor = UIColor.lightGrayColor()
@@ -84,19 +99,19 @@ class DiscoverLitterCell: DiscoverCell {
         self.contentView.addSubview(self.productNumberLabel!)
         self.productNumberLabel!.font = UIFont.systemFontOfSize(10.0)
         self.productNumberLabel!.textColor = UIColor.lightGrayColor()
-        self.productNumberLabel!.textAlignment = .Left
+        self.productNumberLabel!.textAlignment = .Right
         
         currentView = self.productNumberLabel!
         
-        let lineView = UIView(frame: CGRectMake(0.0, (currentView.bottom + originXY - 0.5), self.width, 0.5))
+        let lineView = UIImageView(frame: CGRectMake(0.0, (currentView.bottom + originXY - 0.5), self.width, 0.5))
         self.contentView.addSubview(lineView)
-        lineView.backgroundColor = UIColor.lightGrayColor()
+        lineView.image = UIImage.imageWithColor(UIColor.lightGrayColor())
     }
     
     /// cell高度
     override class func heightForCell() -> CGFloat
     {
-        return (sizeImageView + 40.0 + 20.0 + 10.0 * 2)
+        return (10.0 + 40.0 + sizeImageView + 10.0 / 2 + 20.0 + 10.0)
     }
     
     /// 刷新cell数据
@@ -104,21 +119,26 @@ class DiscoverLitterCell: DiscoverCell {
     {
         if let model:DiscoverModel = data
         {
-            for index in 0..<model.productImages.count
+            for index in 0..<3
             {
-                let imageStr:String = model.productImages[index]
+                let imageStr:String = model.productImages[random() % model.productImages.count]
                 
                 let imageViewTag:UIImageView = self.contentView.viewWithTag(tagImageView + index) as! UIImageView
-                imageViewTag.image = UIImage.imageWithURL(imageStr)
+                
+                UIImage.imageCacheWithUrl(imageUrl: imageStr, complete: {
+                    (image:UIImage) -> Void in
+                    imageViewTag.image = image
+                })
             }
     
             let title:String = model.productTitle
             self.productTitleLabel!.text = title
             
             let imageHeaderStr:String = model.productAuthorImage
-            let imageHeaderUrl:NSURL = NSURL(string: imageHeaderStr)!
-            let imageHeaderData:NSData = NSData(contentsOfURL: imageHeaderUrl)!
-            self.authorImageView!.image = UIImage(data: imageHeaderData)
+            UIImage.imageCacheWithUrl(imageUrl: imageHeaderStr, complete: {
+                (image:UIImage) -> Void in
+                self.authorImageView!.image = image
+            })
             
             let name:String = model.productAuthorName
             self.authorNameLabel!.text = name

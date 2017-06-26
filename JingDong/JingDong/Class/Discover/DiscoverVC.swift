@@ -26,7 +26,6 @@ class DiscoverVC: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     // MARK: - 视图
     func setUI()
@@ -59,12 +58,15 @@ class DiscoverVC: BaseViewController {
             let authorIndex = random() % heads.count
             model.productAuthorImage = heads[authorIndex]
             model.productAuthorName = names[authorIndex]
-            model.productType = random() % 2 + 1
+            model.productType = random() % 3 + 1
             
             array.addObject(model)
         }
         discoverTable.datas = array
         discoverTable.reloadData()
     }
+    
+    
+    
 
 }

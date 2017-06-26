@@ -33,24 +33,34 @@ extension UIImage {
         return image
     }
     
-//    class func imageCacheWithUrl((url:String) -> ())
-//    {
-//        var data:NSData? = NSUserDefaults.standardUserDefaults().objectForKey(url) as? NSData
-//        if data == nil
-//        {
-//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-//                () -> Void in
-//                let urlURL:NSURL = NSURL.fileURLWithPath(url)
-//                data = NSData(contentsOfURL: urlURL)!
-//                
-//                NSUserDefaults.standardUserDefaults().setObject(data, forKey: url)
-//                let image:UIImage = UIImage(data: data!)!
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    return image
-//                })
-//            })
-//        }
-//    }
+    class func imageCacheWithUrl(imageUrl url:String, complete:(UIImage) -> Void)
+    {
+        var data:NSData? = NSUserDefaults.standardUserDefaults().objectForKey(url) as? NSData
+        if data == nil
+        {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                () -> Void in
+                
+                let urlURL:NSURL! = NSURL(string: url)
+                data = NSData(contentsOfURL: urlURL)!
+                
+                // 保存
+                NSUserDefaults.standardUserDefaults().setObject(data, forKey: url)
+                
+                let image:UIImage = UIImage(data: data!)!
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    complete(image)
+                })
+            })
+        }
+        else
+        {
+            let image:UIImage = UIImage(data: data!)!
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                complete(image)
+            })
+        }
+    }
     
     class func imageUIEdgeWithName(name name:String, edge:UIEdgeInsets) -> UIImage
     {

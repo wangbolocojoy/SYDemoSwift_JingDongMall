@@ -69,7 +69,8 @@ class GoodsListCollectionCell: UICollectionViewCell {
         
         let button = UIButton.init(frame: CGRectMake(currentView.right, currentView.top, 50.0, currentView.height));
         self.contentView.addSubview(button);
-        button.layer(radius: 3.0, borderWidth: 0.5, borderColor: UIColor.lightGrayColor());
+        button.viewRadius(radius: 3.0)
+        button.viewBorder(lineWidth: 0.5, lineColor: UIColor.lightGrayColor())
         button.setTitle("看相似", forState: .Normal);
         button.setTitleColor(UIColor.blackColor(), forState: .Normal);
         button.setTitleColor(UIColor.redColor(), forState: .Highlighted);
